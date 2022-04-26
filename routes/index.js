@@ -8,9 +8,20 @@ module.exports = [
     },
     { 
         method: 'GET',
+        path: '/download', 
+        handler: function (request , h) {
+            return h.file('welcome.html',{
+                mode:'inline',
+                filename:'welcome.download.html'
+            })
+
+        } 
+    },
+    { 
+        method: 'GET',
         path: '/users', 
         handler: function (request , h) {
-            return h.redirect('/')
+            return "<h1>USER PAGE</h1>"
 
         } 
     },

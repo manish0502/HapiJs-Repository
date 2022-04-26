@@ -71,10 +71,10 @@ module.exports = [
         handler: function (request , h) {
             const location = request.location 
             if(location){
-                return h.response(location);
+                return h.view('location',{location: request.location.ip});
             }
             else {
-                return `<h1>Your location is not enabled by default</h1>`
+                return h.view('location',{location: "Your location is not enabled by default"});
             }
         } 
     },

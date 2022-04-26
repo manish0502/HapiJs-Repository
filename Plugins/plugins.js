@@ -2,7 +2,7 @@ module.exports= [
     {
       plugin: require("hapi-geo-locate"),
       options: {
-        enabledByDefault: false,
+        enabledByDefault: true,
       }
     },
     {

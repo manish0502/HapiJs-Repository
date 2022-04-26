@@ -18,6 +18,12 @@ const start = async () => {
 
 // adding Plugins
   await server.register(plugins);
+  await server.views({
+      engines:{
+          html: require('handlebars')
+      },
+      path:Path.join(__dirname, 'dynamic-files')
+  })
 
 // define route
   server.route(routes);

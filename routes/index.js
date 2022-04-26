@@ -6,6 +6,16 @@ module.exports = [
          return h.file('../static-files/welcome.html')
         }
     },
+    {
+        method: 'GET',
+        path:'/dynamic',
+        handler:(request , h) =>{
+            const data={
+                name:'manish kumar'
+            }
+         return h.view('index' ,data)
+        }
+    },
     { 
         method: 'GET',
         path: '/download', 
@@ -29,17 +39,18 @@ module.exports = [
         method: 'POST',
         path: '/login', 
         handler: function (request , h) {
-            console.log(request.payload.username)
-            console.log(request.payload.password);
+            //console.log(request.payload.username)
+           // console.log(request.payload.password);
 
 
-            if(request.payload.username ==="manish" && request.payload.password ==="password"){
-                return h.file('../static-files/loggedIn.html')
-            }
-            else{
-                return h.redirect('/');
-            }
+            // if(request.payload.username ==="manish" && request.payload.password ==="password"){
+            //     return h.file('../static-files/loggedIn.html')
+            // }
+            // else{
+            //     return h.redirect('/');
+            // }
 
+            return h.view('index' ,{username: request.payload.username})
 
         } 
     },

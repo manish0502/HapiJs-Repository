@@ -3,7 +3,7 @@ module.exports = [
         method: 'GET',
         path:'/',
         handler:(request , h) =>{
-        return "<h1>Hello World!!</h1>"
+        return h.file('../static-files/welcome.html')
         }
     },
     { 

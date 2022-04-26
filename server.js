@@ -24,7 +24,8 @@ const start = async () => {
         hbs: require('handlebars')
 
       },
-      path:Path.join(__dirname, 'dynamic-files')
+      path:Path.join(__dirname, 'dynamic-files'),
+      layout:'default'
   })
 
 // define route

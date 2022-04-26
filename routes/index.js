@@ -36,8 +36,6 @@ module.exports = [
             else {
                 return `<h1>Your location is not enabled by default</h1>`
             }
-            
-
         } 
     },
 ];

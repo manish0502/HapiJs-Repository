@@ -3,7 +3,7 @@ module.exports = [
         method: 'GET',
         path:'/',
         handler:(request , h) =>{
-        return h.file('../static-files/welcome.html')
+         return h.file('../static-files/welcome.html')
         }
     },
     { 
@@ -22,6 +22,24 @@ module.exports = [
         path: '/users', 
         handler: function (request , h) {
             return "<h1>USER PAGE</h1>"
+
+        } 
+    },
+    { 
+        method: 'POST',
+        path: '/login', 
+        handler: function (request , h) {
+            console.log(request.payload.username)
+            console.log(request.payload.password);
+
+
+            if(request.payload.username ==="manish" && request.payload.password ==="password"){
+                return h.file('../static-files/loggedIn.html')
+            }
+            else{
+                return h.redirect('/');
+            }
+
 
         } 
     },

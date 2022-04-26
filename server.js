@@ -20,7 +20,9 @@ const start = async () => {
   await server.register(plugins);
   await server.views({
       engines:{
-          html: require('handlebars')
+        //   html: require('handlebars')
+        hbs: require('handlebars')
+
       },
       path:Path.join(__dirname, 'dynamic-files')
   })

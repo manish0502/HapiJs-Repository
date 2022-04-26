@@ -11,6 +11,12 @@ var routes = require('./routes/index');
         host:'localhost'
     })
 
+    await server.register({
+        plugin: require('hapi-geo-locate'),
+        options: {
+            enabledByDefault: false
+        }
+    })
     // define route 
     server.route(routes)
 

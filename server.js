@@ -3,7 +3,15 @@ const Hapi = require("@hapi/hapi");
 var routes = require("./routes/index");
 const Path = require('path');
 const plugins= require("./Plugins/plugins");
+const client = require("./database")
 
+// database connection
+
+const DB = async ()=>{
+  await client.connect()
+}
+
+DB();
 // start server
 const start = async () => {
   const server = Hapi.server({

@@ -18,7 +18,8 @@
     "@hapi/inert": "^6.0.5",
     "@hapi/vision": "^6.1.0",
     "handlebars": "^4.7.7",
-    "hapi-geo-locate": "^4.1.1"
+    "hapi-geo-locate": "^4.1.1",
+    "pg": "^8.7.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

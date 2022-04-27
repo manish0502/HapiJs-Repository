@@ -12,6 +12,15 @@ const DB = async ()=>{
 }
 
 DB();
+
+client.query(`select * from person` , (err, result)=>{
+  if(!err){
+    console.log(result.rows);
+  }
+  client.end()
+  console.log(err)
+})
+
 // start server
 const start = async () => {
   const server = Hapi.server({
@@ -51,3 +60,6 @@ process.on("unhandledRejection", (err) => {
 });
 
 start();
+
+
+
